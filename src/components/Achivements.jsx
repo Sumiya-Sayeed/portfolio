@@ -5,11 +5,13 @@ import {
   Grid,
   Paper,
   Typography,
-  useTheme
+  useTheme,
+  Link
 } from '@mui/material';
-import Education from '../assets/Education.png';
+import Achievement from '../assets/Achievement.png';
+import { achievements } from '../assets/Achievements';
 
-const Educations = ({ id }) => {
+const Achievements = ({ id }) => {
   const theme = useTheme();
 
   return (
@@ -20,6 +22,7 @@ const Educations = ({ id }) => {
       id={id}
       sx={{
         marginTop: 12,
+        marginBottom: 12,
         minHeight: 200,
         height: 'auto',
         width: '100%',
@@ -30,8 +33,8 @@ const Educations = ({ id }) => {
     >
       <Paper
         sx={{
-          backgroundColor: theme.palette.background.paper, // Use paper background color from theme
-          boxShadow: theme.shadows[5], // Use theme shadow for consistency
+          backgroundColor: theme.palette.background.paper,
+          boxShadow: theme.shadows[5],
           width: '80%',
           margin: '0px auto',
           [theme.breakpoints.down('md')]: {
@@ -45,7 +48,13 @@ const Educations = ({ id }) => {
       >
         <Stack
           direction='row'
-          divider={<Divider orientation='vertical' flexItem />}
+          divider={
+            <Divider
+              orientation='vertical'
+              flexItem
+              sx={{ backgroundColor: theme.palette.divider }}
+            />
+          }
           spacing={2}
           sx={{
             minHeight: 200,
@@ -62,7 +71,7 @@ const Educations = ({ id }) => {
             <Typography
               variant='h6'
               align='center'
-              color={theme.palette.text.primary} // Use primary text color from theme
+              color={theme.palette.text.primary}
               sx={{
                 [theme.breakpoints.down('sm')]: {
                   fontSize: '1rem'
@@ -70,8 +79,8 @@ const Educations = ({ id }) => {
               }}
             >
               <img
-                src={Education}
-                alt={`<a href="https://www.flaticon.com/free-icons/education" title="education icons">Education icons created by Freepik - Flaticon</a>`}
+                src={Achievement}
+                alt={`<a href="https://www.flaticon.com/free-icons/trophy" title="trophy icons">Trophy icons created by Freepik - Flaticon</a>`}
                 height={50}
                 width={50}
                 style={{
@@ -80,7 +89,7 @@ const Educations = ({ id }) => {
                 }}
               />
               <br />
-              Education
+              Achievements
             </Typography>
           </div>
           <div
@@ -90,24 +99,31 @@ const Educations = ({ id }) => {
               justifyContent: 'center'
             }}
           >
-            <Typography
-              variant='h6'
-              color={theme.palette.text.primary} // Use primary text color from theme
-            >
-              {`Bachelor of Science in Computer Science and Engineering`}
-            </Typography>
-            <Typography
-              variant='subtitle1'
-              color={theme.palette.text.secondary} // Use secondary text color from theme
-            >
-              {`Stamford University Bangladesh (Graduated in 2017)`}
-            </Typography>
-            <Typography
-              variant='subtitle1'
-              color={theme.palette.text.secondary} // Use secondary text color from theme
-            >
-              {`CGPA: 3.96/4.00`}
-            </Typography>
+            <ul>
+              {achievements.map((achievement, index) => (
+                <li key={index}>
+                  <Typography
+                    sx={{ lineHeight: 2 }} // Increased line height
+                    variant='body2'
+                    color={theme.palette.text.secondary}
+                  >
+                    {achievement.url ? (
+                      <Link
+                        href={achievement.url}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        color='inherit'
+                        sx={{ textDecoration: 'none', fontWeight: 'bold' }}
+                      >
+                        {achievement.text}
+                      </Link>
+                    ) : (
+                      achievement.text
+                    )}
+                  </Typography>
+                </li>
+              ))}
+            </ul>
           </div>
         </Stack>
       </Paper>
@@ -115,4 +131,4 @@ const Educations = ({ id }) => {
   );
 };
 
-export default Educations;
+export default Achievements;
