@@ -1,18 +1,19 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.e6c13ad2.css",
-    "main.js": "/portfolio/static/js/main.5c1fe313.js",
-    "static/media/SumiyaSayeed.jpg": "/portfolio/static/media/SumiyaSayeed.44bf0054177f78ed0a67.jpg",
+    "main.js": "/portfolio/static/js/main.dad07e0d.js",
+    "static/media/SumiyaSayeed.jpeg": "/portfolio/static/media/SumiyaSayeed.c6e22bdab3e58ac6fb05.jpeg",
     "static/media/Skills.png": "/portfolio/static/media/Skills.3ddd8b2ffcca26c6dea7.png",
+    "static/media/Experience.png": "/portfolio/static/media/Experience.d8058f20a1f7a923566d.png",
+    "static/media/Achievement.png": "/portfolio/static/media/Achievement.5ba2047359d3f33c63a6.png",
     "static/media/Education.png": "/portfolio/static/media/Education.416b54507b1fbe170322.png",
     "static/media/Projects.png": "/portfolio/static/media/Projects.790d4a6dbbef7c8eb5d5.png",
-    "static/media/Work.png": "/portfolio/static/media/Work.a81bc813ca9711385b58.png",
     "index.html": "/portfolio/index.html",
     "main.e6c13ad2.css.map": "/portfolio/static/css/main.e6c13ad2.css.map",
-    "main.5c1fe313.js.map": "/portfolio/static/js/main.5c1fe313.js.map"
+    "main.dad07e0d.js.map": "/portfolio/static/js/main.dad07e0d.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.5c1fe313.js"
+    "static/js/main.dad07e0d.js"
   ]
 }
