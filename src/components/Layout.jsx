@@ -81,10 +81,10 @@ const Layout = () => {
         )}
         <Intro id='Intro' />
         <Skills id='Skills' />
-        <Projects id="Projects" />
+        <Projects id='Projects' />
         <Experience id='Experience' />
         <Education id='Education' />
-        <Achievements id='Achivements' />
+        <Achievements id='Achievements' />
         <Typography gutterBottom color={theme.palette.primary.main}>
           Made by{' '}
           <Link

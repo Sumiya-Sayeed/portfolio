@@ -8,8 +8,8 @@ const options = [
     path: 'Skills'
   },
   {
-    menu: 'Achievements',
-    path: 'Achievements'
+    menu: 'Projects',
+    path: 'Projects'
   },
   {
     menu: 'Experience',
@@ -18,6 +18,10 @@ const options = [
   {
     menu: 'Education',
     path: 'Education'
+  },
+  {
+    menu: 'Achievements',
+    path: 'Achievements'
   }
 ];
 
