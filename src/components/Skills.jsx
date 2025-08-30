@@ -47,8 +47,7 @@ const Skills = ({ id }) => {
         }}
       >
         <Stack
-          direction='row'
-          divider={<Divider orientation='vertical' flexItem />}
+          direction='column'
           spacing={2}
           sx={{ minHeight: 300, height: 'auto' }}
         >
@@ -57,12 +56,12 @@ const Skills = ({ id }) => {
             style={{
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center'
+              justifyContent: 'flex-start'
             }}
           >
             <Typography
               variant='h6'
-              align='center'
+              // align='center'
               color={theme.palette.text.primary}
               component='span'
               sx={{
@@ -78,9 +77,9 @@ const Skills = ({ id }) => {
                 width={50}
                 style={{ verticalAlign: 'middle', paddingRight: 8 }}
               />
-              <br />
               Skills
             </Typography>
+            <Divider sx={{ my: 2 }} />
           </div>
 
           {/* Skills Section */}

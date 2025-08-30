@@ -26,9 +26,6 @@ const Achievements = ({ id }) => {
         minHeight: 200,
         height: 'auto',
         width: '100%',
-        [theme.breakpoints.down('md')]: {
-          marginTop: 10
-        }
       }}
     >
       <Paper
@@ -41,13 +38,13 @@ const Achievements = ({ id }) => {
             width: '95%',
             padding: 1
           },
-          padding: 2,
+          padding: 4,
           minHeight: 200,
           height: 'auto'
         }}
       >
         <Stack
-          direction='row'
+          direction='column'
           divider={
             <Divider
               orientation='vertical'
@@ -55,7 +52,7 @@ const Achievements = ({ id }) => {
               sx={{ backgroundColor: theme.palette.divider }}
             />
           }
-          spacing={2}
+          // spacing={2}
           sx={{
             minHeight: 200,
             height: 'auto'
@@ -63,6 +60,7 @@ const Achievements = ({ id }) => {
         >
           <div
             style={{
+              // padding: 15,
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center'
@@ -70,7 +68,6 @@ const Achievements = ({ id }) => {
           >
             <Typography
               variant='h6'
-              align='center'
               color={theme.palette.text.primary}
               sx={{
                 [theme.breakpoints.down('sm')]: {
@@ -88,15 +85,15 @@ const Achievements = ({ id }) => {
                   paddingRight: 1
                 }}
               />
-              <br />
               Achievements
             </Typography>
+            <Divider sx={{ my: 2 }} />
           </div>
           <div
             style={{
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center'
+              // justifyContent: 'center'
             }}
           >
             <ul>
@@ -113,7 +110,7 @@ const Achievements = ({ id }) => {
                         target='_blank'
                         rel='noopener noreferrer'
                         color='inherit'
-                        sx={{ textDecoration: 'none', fontWeight: 'bold' }}
+                        sx={{ textDecoration: 'none', ":hover": { textDecoration: 'underline' }}}
                       >
                         {achievement.text}
                       </Link>

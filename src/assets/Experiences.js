@@ -3,7 +3,7 @@ export const experiences = [
     role: 'Senior Software Engineer',
     company: 'Hubar Tech Ltd',
     companyUrl: 'https://hubartech.com/', // Add the organization's website
-    duration: 'Nov 2022 - Present',
+    duration: 'November 2022 - July 2025',
     responsibilities: [
       'Leading and managing a team of 5 while implementing client-driven features.',
       'Collaborating with team members and clients across different countries.',
@@ -16,7 +16,7 @@ export const experiences = [
     role: 'Software Engineer',
     company: 'Aubichol Intelligent Technologies',
     companyUrl: 'https://aubichol.com/', // Add the organization's website
-    duration: 'July 2018 - Nov 2022',
+    duration: 'July 2018 - November 2022',
     responsibilities: [
       'Contributed to 6 projects (Aubichol, Khelahobe!, Suit and Sarto, Gaachwala, Love Beyond Autism, Skinfinity), mostly developing frontend projects from scratch.',
       'Integrated RESTful APIs, wrote clean and reusable code, and maintained the sites for over 4 years while creating pixel-perfect UIs with intuitive layouts.',
@@ -27,7 +27,7 @@ export const experiences = [
     role: 'Volunteer',
     company: '10billion.org',
     companyUrl: 'https://10billion.org/', // Add the organization's website
-    duration: '29/08/2024 – Current',
+    duration: 'August 2024 – Present',
     responsibilities: [
       'Managing the frontend team and project',
       'Writing content for the website',

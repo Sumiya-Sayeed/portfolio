@@ -9,7 +9,7 @@ import {
   useTheme,
   Link
 } from '@mui/material';
-import { VscAzure } from 'react-icons/vsc';
+import { VscAzure } from 'react-icons/vsc'; // Make sure this icon is used if needed or remove if not
 import Project from '../assets/Projects.png';
 import { projects } from '../assets/Projects';
 
@@ -48,26 +48,26 @@ const Projects = ({ id }) => {
         }}
       >
         <Stack
-          direction='row'
-          divider={<Divider orientation='vertical' flexItem />}
+          direction='column'
           spacing={2}
           sx={{
             minHeight: 200,
             height: 'auto'
           }}
         >
-          {/* Title Section */}
+          {/* Title Section - Modified to match Skills component */}
           <div
             style={{
               display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center'
+              flexDirection: 'column', // Changed to column
+              justifyContent: 'flex-start'
             }}
           >
             <Typography
               variant='h6'
-              align='center'
+              // align='center' // Removed align as it was causing an issue with image
               color={theme.palette.text.primary}
+              component='span' // Added component='span' for consistency with Skills
               sx={{
                 [theme.breakpoints.down('sm')]: {
                   fontSize: '1rem'
@@ -81,12 +81,12 @@ const Projects = ({ id }) => {
                 width={50}
                 style={{
                   verticalAlign: 'middle',
-                  paddingRight: 1
+                  paddingRight: 8 // Increased padding for consistency
                 }}
               />
-              <br />
               Projects
             </Typography>
+            <Divider sx={{ my: 2 }} /> {/* Moved Divider outside Typography */}
           </div>
 
           {/* Projects Section */}
@@ -112,10 +112,16 @@ const Projects = ({ id }) => {
                   gutterBottom
                   variant='body2'
                   color={theme.palette.text.secondary}
+                  sx={{ padding: theme.spacing(1, 0) }} // Added padding for better spacing
                 >
                   Technologies Used:
                 </Typography>
-                <Stack direction='row' spacing={1} flexWrap='wrap'>
+                <Stack
+                  direction='row'
+                  spacing={1}
+                  flexWrap='wrap'
+                  useFlexGap // Ensures wrapping elements maintain spacing
+                >
                   {project.technologies.map((tech, idx) => (
                     <Chip
                       key={idx}
@@ -123,7 +129,7 @@ const Projects = ({ id }) => {
                       label={tech.label}
                       sx={{
                         padding: 1,
-                        margin: 1,
+                        margin: 1, // Chip margins will also help with spacing
                         backgroundColor: theme.palette.primary.dark,
                         '& .MuiChip-icon': {
                           color: theme.palette.secondary.main

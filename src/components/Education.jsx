@@ -8,6 +8,7 @@ import {
   useTheme
 } from '@mui/material';
 import Education from '../assets/Education.png';
+import { educations } from '../assets/Educations';
 
 const Educations = ({ id }) => {
   const theme = useTheme();
@@ -30,85 +31,72 @@ const Educations = ({ id }) => {
     >
       <Paper
         sx={{
-          backgroundColor: theme.palette.background.paper, // Use paper background color from theme
-          boxShadow: theme.shadows[5], // Use theme shadow for consistency
+          backgroundColor: theme.palette.background.paper,
+          boxShadow: theme.shadows[5],
           width: '80%',
           margin: '0px auto',
           [theme.breakpoints.down('md')]: {
             width: '95%',
             padding: 1
           },
-          padding: 2,
+          padding: 4,
           minHeight: 200,
           height: 'auto'
         }}
       >
-        <Stack
-          direction='row'
-          divider={<Divider orientation='vertical' flexItem />}
-          spacing={2}
-          sx={{
-            minHeight: 200,
-            height: 'auto'
-          }}
-        >
+        <Stack direction="column" spacing={2} sx={{ minHeight: 200, height: 'auto' }}>
+          {/* Title Section */}
           <div
             style={{
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'center'
+              justifyContent: 'flex-start'
             }}
           >
             <Typography
               variant='h6'
-              align='center'
-              color={theme.palette.text.primary} // Use primary text color from theme
+              color={theme.palette.text.primary}
+              component='span'
               sx={{
-                [theme.breakpoints.down('sm')]: {
-                  fontSize: '1rem'
-                }
+                display: 'flex',
+                alignItems: 'center',
+                [theme.breakpoints.down('sm')]: { fontSize: '1rem' }
               }}
             >
               <img
                 src={Education}
-                alt={`<a href="https://www.flaticon.com/free-icons/education" title="education icons">Education icons created by Freepik - Flaticon</a>`}
+                alt="Education icons created by Freepik - Flaticon"
                 height={50}
                 width={50}
-                style={{
-                  verticalAlign: 'middle',
-                  paddingRight: 1
-                }}
+                style={{ verticalAlign: 'middle', paddingRight: 8 }}
               />
-              <br />
               Education
             </Typography>
+            <Divider sx={{ my: 2 }} />
           </div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center'
-            }}
-          >
-            <Typography
-              variant='h6'
-              color={theme.palette.text.primary} // Use primary text color from theme
-            >
-              {`Bachelor of Science in Computer Science and Engineering`}
-            </Typography>
-            <Typography
-              variant='subtitle1'
-              color={theme.palette.text.secondary} // Use secondary text color from theme
-            >
-              {`Stamford University Bangladesh (Graduated in 2017)`}
-            </Typography>
-            <Typography
-              variant='subtitle1'
-              color={theme.palette.text.secondary} // Use secondary text color from theme
-            >
-              {`CGPA: 3.96/4.00`}
-            </Typography>
-          </div>
+
+          {/* Vertical list of education entries */}
+          <Stack direction="column" spacing={3} sx={{ height: 'auto' }}>
+            {educations.map((edu, index) => (
+              <div key={index}>
+                <Typography variant='subtitle1' color={theme.palette.text.primary} sx={{ mb: 1 }}>
+                  {edu.degree}
+                </Typography>
+                <Typography variant='subtitle1' color={theme.palette.text.secondary} sx={{ mb: 0.5 }}>
+                  {edu.university}
+                </Typography>
+                <Typography variant='subtitle1' color={theme.palette.text.secondary} sx={{ mb: 0.5 }}>
+                  ({edu.duration})
+                </Typography>
+                {edu.cgpa && (
+                  <Typography variant='subtitle1' color={theme.palette.text.secondary}>
+                    CGPA: {edu.cgpa}
+                  </Typography>
+                )}
+                {/* {index < educations.length - 1 && <Divider sx={{ my: 2 }} />} */}
+              </div>
+            ))}
+          </Stack>
         </Stack>
       </Paper>
     </Grid>

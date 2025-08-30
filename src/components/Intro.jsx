@@ -42,8 +42,8 @@ const Intro = ({ id }) => {
     >
       <Paper
         sx={{
-          backgroundColor: theme.palette.background.paper, // Use paper background color from theme
-          boxShadow: theme.shadows[5], // Use theme shadow for consistency
+          backgroundColor: theme.palette.background.paper,
+          boxShadow: theme.shadows[5],
           width: '80%',
           margin: '0px auto',
           [theme.breakpoints.down('md')]: {
@@ -86,13 +86,13 @@ const Intro = ({ id }) => {
               style={{
                 objectFit: 'cover',
                 borderRadius: 10,
-                border: `2px solid ${theme.palette.primary.main}` // Add border for better visibility
+                border: `2px solid ${theme.palette.primary.main}`
               }}
             />
             <Typography
               variant='h6'
               sx={{
-                color: theme.palette.text.primary, // Use primary text color from theme
+                color: theme.palette.text.primary,
                 padding: theme.spacing(1, 0, 0, 0)
               }}
             >
@@ -101,7 +101,7 @@ const Intro = ({ id }) => {
             <Typography
               variant='body2'
               sx={{
-                color: theme.palette.text.secondary, // Use secondary text color from theme
+                color: theme.palette.text.secondary,
                 padding: theme.spacing(0, 0, 1, 0)
               }}
             >
@@ -116,7 +116,7 @@ const Intro = ({ id }) => {
               height: 'auto',
               margin: 'auto',
               padding: 2,
-              color: theme.palette.text.secondary // Use secondary text color from theme
+              color: theme.palette.text.secondary
             }}
           >
             <Typography variant='body2'>
@@ -156,11 +156,9 @@ const Intro = ({ id }) => {
                 <IconButton
                   key={index}
                   href={i.href}
-                  sx={{
-                    color: theme.palette.primary.main // Use primary color for icons
-                  }}
+                  // Removed the color prop from IconButton
                 >
-                  <SvgIcon>
+                  <SvgIcon sx={{ color: theme.palette.primary.light }}> {/* Add color to SvgIcon */}
                     <svg xmlns={i.xmlns} viewBox={i.viewbox}>
                       <path d={i.d} />
                     </svg>
