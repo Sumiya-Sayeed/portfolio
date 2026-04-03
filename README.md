@@ -1,71 +1,51 @@
-# Getting Started with Create React App
+# Sumiya Sayeed – Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A personal portfolio site built with [Create React App](https://github.com/facebook/create-react-app) and deployed to **GitHub Pages** at [www.sumiyasayeed.com](https://www.sumiyasayeed.com).
 
-## Available Scripts
+## Local development
 
-In the project directory, you can run:
+```bash
+yarn install
+yarn start        # http://localhost:3000
+```
 
-### `yarn start`
+## Deployment
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The site is deployed automatically via GitHub Actions whenever a commit is pushed to the `main` branch.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The workflow (`.github/workflows/deploy.yml`) does the following:
+1. Installs dependencies with `yarn install`.
+2. Builds the production bundle with `yarn build`.
+3. Publishes the `build/` directory to the `gh-pages` branch using [`peaceiris/actions-gh-pages`](https://github.com/peaceiris/actions-gh-pages).
 
-### `yarn test`
+GitHub Pages is configured to serve from the `gh-pages` branch.  
+The `CNAME` file (`www.sumiyasayeed.com`) is automatically included in the deployed output so the custom domain binding is preserved on every deployment.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Required DNS records
 
-### `yarn build`
+Configure the following records at your DNS provider to point `www.sumiyasayeed.com` at GitHub Pages:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Type  | Name | Value                     |
+|-------|------|---------------------------|
+| CNAME | www  | sumiya-sayeed.github.io   |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+For the apex domain (`sumiyasayeed.com` without `www`) you have two options:
+- **Option A – redirect at the DNS level**: use your DNS provider's "URL redirect" feature to redirect `@`/`sumiyasayeed.com` → `https://www.sumiyasayeed.com`.
+- **Option B – GitHub Pages A records**: add four `A` records for `@` pointing to the GitHub Pages IPs listed in [GitHub's documentation](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site#configuring-an-apex-domain) (`185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`).
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### GitHub Pages settings (one-time)
 
-### `yarn eject`
+1. Go to **Settings → Pages** in this repository.
+2. Under **Build and deployment → Source**, select **Deploy from a branch**.
+3. Choose branch `gh-pages` / `/ (root)`.
+4. Set **Custom domain** to `www.sumiyasayeed.com` and save.
+5. Once DNS propagates, enable **Enforce HTTPS**.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Available scripts
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Command        | Description                              |
+|----------------|------------------------------------------|
+| `yarn start`   | Start the development server             |
+| `yarn build`   | Build for production (output: `build/`)  |
+| `yarn test`    | Run tests                                |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# sumiya-portfolio
