@@ -1,19 +1,14 @@
 {
   "files": {
-    "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.f34654aa.js",
+    "main.css": "/static/css/main.ad10d6c6.css",
+    "main.js": "/static/js/main.a122f7f3.js",
     "static/media/SumiyaSayeed.jpeg": "/static/media/SumiyaSayeed.c6e22bdab3e58ac6fb05.jpeg",
-    "static/media/Skills.png": "/static/media/Skills.3ddd8b2ffcca26c6dea7.png",
-    "static/media/Experience.png": "/static/media/Experience.d8058f20a1f7a923566d.png",
-    "static/media/Achievement.png": "/static/media/Achievement.5ba2047359d3f33c63a6.png",
-    "static/media/Education.png": "/static/media/Education.416b54507b1fbe170322.png",
-    "static/media/Projects.png": "/static/media/Projects.790d4a6dbbef7c8eb5d5.png",
     "index.html": "/index.html",
-    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.f34654aa.js.map": "/static/js/main.f34654aa.js.map"
+    "main.ad10d6c6.css.map": "/static/css/main.ad10d6c6.css.map",
+    "main.a122f7f3.js.map": "/static/js/main.a122f7f3.js.map"
   },
   "entrypoints": [
-    "static/css/main.e6c13ad2.css",
-    "static/js/main.f34654aa.js"
+    "static/css/main.ad10d6c6.css",
+    "static/js/main.a122f7f3.js"
   ]
 }
