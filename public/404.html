@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Sumiya Sayeed</title>
+    <script>
+      // Single-page app 404 redirect for GitHub Pages.
+      // When GitHub Pages returns a 404 for a path that doesn't exist as a
+      // file, this page redirects back to the root with the original path
+      // stored in the URL query string so the React app can restore it.
+      var path = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+      window.location.replace(
+        '/?p=' + encodeURIComponent(path) +
+        (search ? '&q=' + encodeURIComponent(search.slice(1)) : '') +
+        (hash ? '#' + hash.slice(1) : '')
+      );
+    </script>
+  </head>
+  <body></body>
+</html>
