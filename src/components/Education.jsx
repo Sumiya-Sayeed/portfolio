@@ -1,106 +1,41 @@
 import React from 'react';
-import {
-  Stack,
-  Divider,
-  Grid,
-  Paper,
-  Typography,
-  useTheme
-} from '@mui/material';
-import Education from '../assets/Education.png';
 import { educations } from '../assets/Educations';
 
-const Educations = ({ id }) => {
-  const theme = useTheme();
-
+const Education = ({ id }) => {
   return (
-    <Grid
-      item
-      xs={12}
-      md={8}
-      id={id}
-      sx={{
-        marginTop: 12,
-        minHeight: 200,
-        height: 'auto',
-        width: '100%',
-        [theme.breakpoints.down('md')]: {
-          marginTop: 10
-        }
-      }}
-    >
-      <Paper
-        sx={{
-          backgroundColor: theme.palette.background.paper,
-          boxShadow: theme.shadows[5],
-          width: '80%',
-          margin: '0px auto',
-          [theme.breakpoints.down('md')]: {
-            width: '95%',
-            padding: 1
-          },
-          padding: 4,
-          minHeight: 200,
-          height: 'auto'
-        }}
-      >
-        <Stack direction="column" spacing={2} sx={{ minHeight: 200, height: 'auto' }}>
-          {/* Title Section */}
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'flex-start'
-            }}
-          >
-            <Typography
-              variant='h6'
-              color={theme.palette.text.primary}
-              component='span'
-              sx={{
-                display: 'flex',
-                alignItems: 'center',
-                [theme.breakpoints.down('sm')]: { fontSize: '1rem' }
-              }}
-            >
-              <img
-                src={Education}
-                alt="Education icons created by Freepik - Flaticon"
-                height={50}
-                width={50}
-                style={{ verticalAlign: 'middle', paddingRight: 8 }}
-              />
-              Education
-            </Typography>
-            <Divider sx={{ my: 2 }} />
-          </div>
+    <section id={id} className="py-24 px-6 bg-white">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-2xl font-bold tracking-tight text-stone-900">Education</h2>
+        <div className="mt-1 h-px w-12 bg-accent-400" />
 
-          {/* Vertical list of education entries */}
-          <Stack direction="column" spacing={3} sx={{ height: 'auto' }}>
-            {educations.map((edu, index) => (
-              <div key={index}>
-                <Typography variant='subtitle1' color={theme.palette.text.primary} sx={{ mb: 1 }}>
-                  {edu.degree}
-                </Typography>
-                <Typography variant='subtitle1' color={theme.palette.text.secondary} sx={{ mb: 0.5 }}>
-                  {edu.university}
-                </Typography>
-                <Typography variant='subtitle1' color={theme.palette.text.secondary} sx={{ mb: 0.5 }}>
-                  ({edu.duration})
-                </Typography>
-                {edu.cgpa && (
-                  <Typography variant='subtitle1' color={theme.palette.text.secondary}>
-                    CGPA: {edu.cgpa}
-                  </Typography>
-                )}
-                {/* {index < educations.length - 1 && <Divider sx={{ my: 2 }} />} */}
+        <div className="mt-10 space-y-8">
+          {educations.map((edu, index) => (
+            <div key={index} className="flex gap-4">
+              {/* Icon */}
+              <div className="shrink-0 mt-1">
+                <div className="w-10 h-10 rounded-xl bg-accent-50 flex items-center justify-center">
+                  <svg className="w-5 h-5 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5" />
+                  </svg>
+                </div>
               </div>
-            ))}
-          </Stack>
-        </Stack>
-      </Paper>
-    </Grid>
+
+              <div>
+                <h3 className="text-base font-semibold text-stone-900">{edu.degree}</h3>
+                <p className="mt-1 text-sm text-stone-500">{edu.university}</p>
+                <p className="text-sm text-stone-400">{edu.duration}</p>
+                {edu.cgpa && (
+                  <p className="mt-1 text-sm text-stone-400">
+                    CGPA: <span className="font-medium text-accent-700">{edu.cgpa}</span>
+                  </p>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
-export default Educations;
+export default Education;

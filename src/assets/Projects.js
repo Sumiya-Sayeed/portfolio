@@ -1,27 +1,10 @@
 import {
   FaReact,
-  FaNodeJs,
-  FaGit,
-  FaDocker,
   FaJs,
-  FaPython,
   FaHtml5,
-  FaAws
 } from 'react-icons/fa';
 import {
-  SiCplusplus,
-  SiTypescript,
   SiRedux,
-  SiNextdotjs,
-  SiExpress,
-  SiKubernetes,
-  SiJira,
-  SiTailwindcss,
-  SiBootstrap,
-  SiAzuredevops,
-  SiGraphql,
-  SiMongodb,
-  SiMaterialui,
   SiMaterialdesign,
   SiAxios
 } from 'react-icons/si';

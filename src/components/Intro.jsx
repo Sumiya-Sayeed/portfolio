@@ -1,175 +1,74 @@
 import React from 'react';
-import {
-  Grid,
-  Paper,
-  SvgIcon,
-  IconButton,
-  Typography,
-  useTheme
-} from '@mui/material';
-import { makeStyles } from '@mui/styles';
 import SumiyaSayeed from '../assets/SumiyaSayeed.jpeg';
 import logos from '../assets/ProfileLogos';
 
-const useStyles = makeStyles((theme) => ({
-  div: {
-    padding: theme.spacing(2, 0),
-    [theme.breakpoints.down('md')]: {
-      padding: theme.spacing(1, 0)
-    }
-  }
-}));
-
 const Intro = ({ id }) => {
-  const theme = useTheme();
-  const classes = useStyles();
-
   return (
-    <Grid
-      item
-      xs={12}
-      md={8}
-      id={id}
-      sx={{
-        marginTop: 12,
-        minHeight: 300,
-        height: 'auto',
-        width: '100%',
-        [theme.breakpoints.down('md')]: {
-          marginTop: 10
-        }
-      }}
-    >
-      <Paper
-        sx={{
-          backgroundColor: theme.palette.background.paper,
-          boxShadow: theme.shadows[5],
-          width: '80%',
-          margin: '0px auto',
-          [theme.breakpoints.down('md')]: {
-            width: '95%',
-            padding: 1
-          },
-          padding: 2,
-          minHeight: 300,
-          height: 'auto'
-        }}
-      >
-        <Grid
-          container
-          direction='row'
-          justifyContent='center'
-          alignItems='center'
-          sx={{
-            minHeight: 300,
-            height: 'auto'
-          }}
-        >
-          <Grid
-            item
-            sm={12}
-            md={4}
-            sx={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              alignItems: 'center',
-              height: 'auto',
-              margin: 'auto'
-            }}
-          >
-            <img
-              src={SumiyaSayeed}
-              alt='SumiyaSayeed'
-              width={220}
-              height={220}
-              style={{
-                objectFit: 'cover',
-                borderRadius: 10,
-                border: `2px solid ${theme.palette.primary.main}`
-              }}
-            />
-            <Typography
-              variant='h6'
-              sx={{
-                color: theme.palette.text.primary,
-                padding: theme.spacing(1, 0, 0, 0)
-              }}
-            >
-              Sumiya Sayeed
-            </Typography>
-            <Typography
-              variant='body2'
-              sx={{
-                color: theme.palette.text.secondary,
-                padding: theme.spacing(0, 0, 1, 0)
-              }}
-            >
-              Software Engineer
-            </Typography>
-          </Grid>
-          <Grid
-            item
-            sm={12}
-            md={8}
-            sx={{
-              height: 'auto',
-              margin: 'auto',
-              padding: 2,
-              color: theme.palette.text.secondary
-            }}
-          >
-            <Typography variant='body2'>
-              I am a passionate and skilled frontend developer with a deep
-              enthusiasm for building user-friendly, high-quality web
-              applications. My expertise extends beyond frontend development to
-              full-stack engineering, DevOps, and emerging fields like AI and
-              data science, allowing me to approach projects from a holistic
-              perspective. With a strong foundation in responsive and
-              pixel-perfect design, I specialize in creating scalable
-              applications that seamlessly integrate cutting-edge technologies.
-              <br />
-              <br />
-              Beyond development, I am an avid competitive programmer, having
-              solved over 800 challenges on platforms like CodeForces, AtCoder,
-              UVa, Toph, and HackerRank. This experience has honed my critical
-              thinking and problem-solving skills, making me a more effective
-              and resourceful developer.
-              <br />
-              <br />
-              My curiosity extends to cognitive science and psychology, fields
-              that inspire my belief in the intersection of technology and human
-              behavior. Books like The Brain: The Story of You by David Eagleman
-              and Emotional Intelligence by Daniel Goleman, along with podcasts
-              from experts like Neil deGrasse Tyson and Dr. Andrew Huberman,
-              have significantly shaped my perspective. I am constantly
-              exploring how insights from neuroscience and psychology can
-              influence AI development and cognitive computing.
-              <br />
-              <br />
-              Driven by a relentless thirst for learning, I am always eager to
-              push boundaries, solve complex challenges, and contribute to
-              impactful projects that bridge technology and human understanding.
-            </Typography>
-            <div className={classes.div}>
-              {logos.map((i, index) => (
-                <IconButton
-                  key={index}
-                  href={i.href}
-                  // Removed the color prop from IconButton
+    <section id={id} className="min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-12">
+      <div className="max-w-2xl w-full">
+        {/* Top: Photo + Name + Title + Social — centered */}
+        <div className="flex flex-col items-center text-center animate-fade-in-up">
+          <img
+            src={SumiyaSayeed}
+            alt="Sumiya Sayeed"
+            className="w-36 h-36 rounded-full object-cover shadow-lg ring-2 ring-accent-200 ring-offset-4 ring-offset-stone-50"
+          />
+
+          <h1 className="mt-6 text-4xl md:text-5xl font-bold tracking-tight text-stone-900">
+            Sumiya Sayeed
+          </h1>
+
+          <p className="mt-2 text-lg text-accent-600 font-medium">
+            Software Engineer
+          </p>
+
+          {/* Social links */}
+          <div className="mt-5 flex items-center gap-2">
+            {logos.map((logo, index) => (
+              <a
+                key={index}
+                href={logo.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2 text-stone-400 hover:text-accent-600 transition-colors rounded-lg hover:bg-accent-50"
+                aria-label={`Social link ${index + 1}`}
+              >
+                <svg
+                  xmlns={logo.xmlns}
+                  viewBox={logo.viewbox}
+                  fill="currentColor"
+                  className="w-5 h-5"
                 >
-                  <SvgIcon sx={{ color: theme.palette.primary.light }}> {/* Add color to SvgIcon */}
-                    <svg xmlns={i.xmlns} viewBox={i.viewbox}>
-                      <path d={i.d} />
-                    </svg>
-                  </SvgIcon>
-                </IconButton>
-              ))}
-            </div>
-          </Grid>
-        </Grid>
-      </Paper>
-    </Grid>
+                  <path d={logo.d} />
+                </svg>
+              </a>
+            ))}
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="mt-10 mb-10 h-px w-16 mx-auto bg-accent-300" />
+
+        {/* Bio paragraphs — left-aligned, readable column */}
+        <div className="space-y-5 text-stone-500 leading-relaxed animate-fade-in-up animate-delay-200">
+          <p>
+            I am a passionate and skilled frontend developer with a deep enthusiasm for building user-friendly, high-quality web applications. Over time, my expertise has grown beyond frontend development into full-stack engineering, DevOps, and emerging areas like AI and data science, allowing me to approach problems with a more holistic and strategic mindset. With a strong foundation in responsive and pixel-perfect design, I focus on creating scalable applications that integrate modern technologies seamlessly.
+          </p>
+
+          <p>
+            Beyond development, I am an active competitive programmer, having solved over 800 challenges across platforms such as Codeforces, AtCoder, UVa, Toph, and HackerRank. This journey has sharpened my critical thinking and problem-solving abilities, making me more analytical, efficient, and resourceful in tackling real-world engineering challenges.
+          </p>
+
+          <p>
+            My curiosity also extends into cognitive science and psychology, which continuously shape how I think about technology and its impact on people. Influenced by works like The Brain: The Story of You by David Eagleman and Emotional Intelligence by Daniel Goleman, along with insights from experts such as Neil deGrasse Tyson and Dr. Andrew Huberman, I am particularly interested in the intersection of human behavior, neuroscience, and AI. I actively explore how these perspectives can inform better system design and more human-centered intelligent solutions.
+          </p>
+
+          <p>
+            Driven by a strong desire to learn and grow, I am always pushing myself to explore new ideas, solve complex problems, and contribute to meaningful projects that connect technology with human understanding.
+          </p>
+        </div>
+      </div>
+    </section>
   );
 };
 

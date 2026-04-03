@@ -1,123 +1,39 @@
 import React from 'react';
-import {
-  Stack,
-  Chip,
-  Divider,
-  Grid,
-  Paper,
-  Typography,
-  useTheme
-} from '@mui/material';
-import Skill from '../assets/Skills.png'; // Ensure the image path is correct
 import { skills } from '../assets/Skills';
-import { LiaCriticalRole } from 'react-icons/lia';
 
 const Skills = ({ id }) => {
-  const theme = useTheme();
-
   return (
-    <Grid
-      item
-      xs={12}
-      md={8}
-      id={id}
-      sx={{
-        marginTop: 12,
-        minHeight: 300,
-        height: 'auto',
-        width: '100%',
-        [theme.breakpoints.down('md')]: {
-          marginTop: 10
-        }
-      }}
-    >
-      <Paper
-        sx={{
-          backgroundColor: theme.palette.background.paper,
-          boxShadow: theme.shadows[5],
-          width: '80%',
-          margin: '0px auto',
-          [theme.breakpoints.down('md')]: {
-            width: '95%',
-            padding: 1
-          },
-          padding: 2,
-          minHeight: 300,
-          height: 'auto'
-        }}
-      >
-        <Stack
-          direction='column'
-          spacing={2}
-          sx={{ minHeight: 300, height: 'auto' }}
-        >
-          {/* Title Section */}
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'flex-start'
-            }}
-          >
-            <Typography
-              variant='h6'
-              // align='center'
-              color={theme.palette.text.primary}
-              component='span'
-              sx={{
-                [theme.breakpoints.down('sm')]: {
-                  fontSize: '1rem'
-                }
-              }}
-            >
-              <img
-                src={Skill}
-                alt='<a href="https://www.flaticon.com/free-icons/skill" title="skill icons">Skill icons created by Eucalyp - Flaticon</a>'
-                height={50}
-                width={50}
-                style={{ verticalAlign: 'middle', paddingRight: 8 }}
-              />
-              Skills
-            </Typography>
-            <Divider sx={{ my: 2 }} />
-          </div>
+    <section id={id} className="py-24 px-6">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-2xl font-bold tracking-tight text-stone-900">Skills</h2>
+        <div className="mt-1 h-px w-12 bg-accent-400" />
 
-          {/* Skills Section */}
-          <div>
-            {skills.map((skillCategory, index) => (
-              <div key={index}>
-                <Typography
-                  variant='body2'
-                  color={theme.palette.text.secondary}
-                  component='span'
-                  sx={{ padding: 2, display: 'block' }}
-                >
-                  <strong>{skillCategory.label}</strong>
-                </Typography>
-                {skillCategory.data.map((skill, index1) => (
-                  <Chip
-                    key={index1}
-                    icon={skill.icon || <LiaCriticalRole />}
-                    label={skill.label}
-                    sx={{
-                      padding: 1,
-                      margin: 1,
-                      backgroundColor: theme.palette.primary.dark,
-                      '& .MuiChip-icon': {
-                        color: theme.palette.secondary.main
-                      },
-                      '& .MuiChip-label': {
-                        color: theme.palette.secondary.main
-                      }
-                    }}
-                  />
+        <div className="mt-10 space-y-8">
+          {skills.map((category, index) => (
+            <div key={index}>
+              <h3 className="text-xs font-semibold uppercase tracking-widest text-accent-600 mb-3">
+                {category.label}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {category.data.map((skill, idx) => (
+                  <span
+                    key={idx}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 text-sm text-stone-600 bg-stone-100 rounded-full hover:bg-accent-100 hover:text-accent-800 transition-colors"
+                  >
+                    {skill.icon && (
+                      <span className="text-stone-400 text-base flex items-center">
+                        {skill.icon}
+                      </span>
+                    )}
+                    {skill.label}
+                  </span>
                 ))}
               </div>
-            ))}
-          </div>
-        </Stack>
-      </Paper>
-    </Grid>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

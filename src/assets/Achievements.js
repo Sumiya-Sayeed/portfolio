@@ -1,11 +1,11 @@
 export const achievements = [
-    {
+  {
     text: 'Achieved Sweden Institute Scholarship for Global Professionals - 2025',
     url: 'https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/'
   },
-    {
-    text: 'Placed 18th in an international hackathon on Machine Learning organized by Her Will.',
-    url: 'https://www.kaggle.com/competitions/her-will-ai-for-equality-datathon-2024/leaderboard'
+  {
+    text: 'Won hackathon arranged by High Five - 2025',
+    url: 'https://highfive.se/'
   },
   {
     text: 'Placed 18th in an international hackathon on Machine Learning organized by Her Will.',

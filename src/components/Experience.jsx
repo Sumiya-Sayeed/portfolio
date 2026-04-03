@@ -1,155 +1,49 @@
 import React from 'react';
-import {
-  Stack,
-  Divider,
-  Grid,
-  Paper,
-  Typography,
-  useTheme,
-  Link
-} from '@mui/material';
-import Experience from '../assets/Experience.png';
 import { experiences } from '../assets/Experiences';
 
-const Experiences = ({ id }) => {
-  const theme = useTheme();
-
+const Experience = ({ id }) => {
   return (
-    <Grid
-      item
-      xs={12}
-      md={8}
-      id={id}
-      sx={{
-        marginTop: 12,
-        minHeight: 200,
-        height: 'auto',
-        width: '100%',
-        [theme.breakpoints.down('md')]: {
-          marginTop: 10
-        }
-      }}
-    >
-      <Paper
-        sx={{
-          backgroundColor: theme.palette.background.paper,
-          boxShadow: theme.shadows[5],
-          width: '80%',
-          margin: '0px auto',
-          [theme.breakpoints.down('md')]: {
-            width: '95%',
-            padding: 1
-          },
-          padding: 4,
-          minHeight: 200,
-          height: 'auto'
-        }}
-      >
-        {/* Changed Stack to column to encapsulate the Title and then the content */}
-        <Stack direction='column' spacing={2} sx={{ minHeight: 200, height: 'auto' }}>
+    <section id={id} className="py-24 px-6">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-2xl font-bold tracking-tight text-stone-900">Experience</h2>
+        <div className="mt-1 h-px w-12 bg-accent-400" />
 
-          {/* Title Section - Modified to match Skills/Projects layout */}
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column', // Changed to column
-              justifyContent: 'flex-start'
-            }}
-          >
-            <Typography
-              variant='h6'
-              color={theme.palette.text.primary}
-              component='span' // Added component='span' for consistency
-              sx={{
-                [theme.breakpoints.down('sm')]: {
-                  fontSize: '1rem'
-                }
-              }}
-            >
-              <img
-                src={Experience}
-                alt={`<a href="https://www.flaticon.com/free-icons/worker" title="worker icons">Worker icons created by Freepik - Flaticon</a>`}
-                height={50}
-                width={50}
-                style={{
-                  verticalAlign: 'middle',
-                  paddingRight: 8 // Increased padding for consistency
-                }}
-              />
-              Experience
-            </Typography>
-            <Divider sx={{ my: 2 }} /> {/* Moved Divider outside Typography */}
-          </div>
+        <div className="mt-10 space-y-10">
+          {experiences.map((exp, index) => (
+            <div key={index} className="relative pl-6 border-l-2 border-accent-200">
+              {/* Timeline dot */}
+              <div className="absolute left-[-5px] top-1.5 w-2 h-2 rounded-full bg-accent-500" />
 
-          {/* Main content area, now using a Stack for horizontal layout with divider */}
-          <Stack
-            direction={{ xs: 'column', md: 'row' }} // Make it column on small screens, row on medium and up
-            divider={
-              <Divider
-                orientation='vertical'
-                flexItem
-                sx={{
-                  backgroundColor: theme.palette.divider,
-                  display: { xs: 'none', md: 'block' } // Hide vertical divider on small screens
-                }}
-              />
-            }
-            spacing={2}
-            sx={{
-              height: 'auto',
-              justifyContent: 'center', // Center content when it's a row
-              alignItems: 'flex-start', // Align items to the start for better list appearance
-            }}
-          >
-            {/* The left section (empty in your original, but conceptually for the title if it were separate) */}
-            {/* Keeping it for structure, but its content will now be part of the main title above */}
-            {/* You can remove this empty div if you only want the "Experiences" content */}
-            {/* For now, I'll remove the original title div to avoid duplication and use the new one */}
-            {/* I'm going to assume you want the title section *above* the list of experiences. */}
-
-            {/* This div will hold the actual experience entries */}
-            <div style={{ flexGrow: 1 }}> {/* Allow this div to take available space */}
-              {experiences.map((exp, index) => (
-                <div key={index} style={{ marginBottom: '20px' }}>
-                  <Typography variant='h6' color={theme.palette.text.primary}>
-                    {exp.role}
-                  </Typography>
-                  <Typography
-                    variant='subtitle1'
-                    color={theme.palette.text.secondary}
+              <div>
+                <h3 className="text-base font-semibold text-stone-900">{exp.role}</h3>
+                <div className="mt-1 flex flex-wrap items-center gap-x-2 text-sm">
+                  <a
+                    href={exp.companyUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-stone-600 font-medium hover:text-accent-700 transition-colors"
                   >
-                    <Link
-                      href={exp.companyUrl}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      color='inherit'
-                      sx={{ textDecoration: 'none', fontWeight: 'bold' }}
-                    >
-                      {exp.company}
-                    </Link>
-                    {' '} ({exp.duration}) {/* Added space here */}
-                  </Typography>
-                  <ul>
-                    {exp.responsibilities.map((task, idx) => (
-                      <li key={idx}>
-                        <Typography
-                          sx={{ lineHeight: 1.5 }} // Adjusted line height for better readability
-                          variant='body2'
-                          color={theme.palette.text.secondary}
-                        >
-                          {task}
-                        </Typography>
-                      </li>
-                    ))}
-                  </ul>
+                    {exp.company}
+                  </a>
+                  <span className="text-stone-300">/</span>
+                  <span className="text-stone-400">{exp.duration}</span>
                 </div>
-              ))}
+
+                <ul className="mt-4 space-y-2">
+                  {exp.responsibilities.map((task, idx) => (
+                    <li key={idx} className="flex gap-2 text-sm text-stone-500 leading-relaxed">
+                      <span className="mt-2 shrink-0 w-1 h-1 rounded-full bg-stone-300" />
+                      {task}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </Stack>
-        </Stack>
-      </Paper>
-    </Grid>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
-export default Experiences;
+export default Experience;

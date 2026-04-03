@@ -5,7 +5,6 @@ import {
   FaDocker,
   FaJs,
   FaPython,
-  FaJava,
   FaHtml5,
   FaAws
 } from 'react-icons/fa';
@@ -19,12 +18,10 @@ import {
   SiJira,
   SiTailwindcss,
   SiBootstrap,
-  SiAws,
-  SiAzuredevops,
   SiGraphql
 } from 'react-icons/si';
 import { VscAzure } from 'react-icons/vsc';
-import { GiTeamIdea, GiThink } from 'react-icons/gi';
+import { GiTeamIdea } from 'react-icons/gi';
 import { IoTimerOutline } from 'react-icons/io5';
 import { MdSyncProblem } from 'react-icons/md';
 import { TbBrandElastic } from 'react-icons/tb';

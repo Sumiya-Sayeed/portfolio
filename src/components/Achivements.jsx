@@ -1,130 +1,43 @@
 import React from 'react';
-import {
-  Stack,
-  Divider,
-  Grid,
-  Paper,
-  Typography,
-  useTheme,
-  Link
-} from '@mui/material';
-import Achievement from '../assets/Achievement.png';
 import { achievements } from '../assets/Achievements';
 
 const Achievements = ({ id }) => {
-  const theme = useTheme();
-
   return (
-    <Grid
-      item
-      xs={12}
-      md={8}
-      id={id}
-      sx={{
-        marginTop: 12,
-        marginBottom: 12,
-        minHeight: 200,
-        height: 'auto',
-        width: '100%',
-      }}
-    >
-      <Paper
-        sx={{
-          backgroundColor: theme.palette.background.paper,
-          boxShadow: theme.shadows[5],
-          width: '80%',
-          margin: '0px auto',
-          [theme.breakpoints.down('md')]: {
-            width: '95%',
-            padding: 1
-          },
-          padding: 4,
-          minHeight: 200,
-          height: 'auto'
-        }}
-      >
-        <Stack
-          direction='column'
-          divider={
-            <Divider
-              orientation='vertical'
-              flexItem
-              sx={{ backgroundColor: theme.palette.divider }}
-            />
-          }
-          // spacing={2}
-          sx={{
-            minHeight: 200,
-            height: 'auto'
-          }}
-        >
-          <div
-            style={{
-              // padding: 15,
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center'
-            }}
-          >
-            <Typography
-              variant='h6'
-              color={theme.palette.text.primary}
-              sx={{
-                [theme.breakpoints.down('sm')]: {
-                  fontSize: '1rem'
-                }
-              }}
+    <section id={id} className="py-24 px-6">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-2xl font-bold tracking-tight text-stone-900">Achievements</h2>
+        <div className="mt-1 h-px w-12 bg-accent-400" />
+
+        <div className="mt-10 space-y-4">
+          {achievements.map((achievement, index) => (
+            <div
+              key={index}
+              className="flex items-start gap-3 p-4 rounded-xl hover:bg-stone-100/60 transition-colors"
             >
-              <img
-                src={Achievement}
-                alt={`<a href="https://www.flaticon.com/free-icons/trophy" title="trophy icons">Trophy icons created by Freepik - Flaticon</a>`}
-                height={50}
-                width={50}
-                style={{
-                  verticalAlign: 'middle',
-                  paddingRight: 1
-                }}
-              />
-              Achievements
-            </Typography>
-            <Divider sx={{ my: 2 }} />
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              // justifyContent: 'center'
-            }}
-          >
-            <ul>
-              {achievements.map((achievement, index) => (
-                <li key={index}>
-                  <Typography
-                    sx={{ lineHeight: 2 }} // Increased line height
-                    variant='body2'
-                    color={theme.palette.text.secondary}
-                  >
-                    {achievement.url ? (
-                      <Link
-                        href={achievement.url}
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        color='inherit'
-                        sx={{ textDecoration: 'none', ":hover": { textDecoration: 'underline' }}}
-                      >
-                        {achievement.text}
-                      </Link>
-                    ) : (
-                      achievement.text
-                    )}
-                  </Typography>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Stack>
-      </Paper>
-    </Grid>
+              {/* Trophy icon */}
+              <div className="shrink-0 mt-0.5">
+                <svg className="w-5 h-5 text-accent-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5 5V.13a2.96 2.96 0 00-1.293.749L.879 3.707A2.96 2.96 0 00.13 5H5zm6.5-5v5h4.87a2.96 2.96 0 00-.748-1.293L12.793.879A2.96 2.96 0 0011.5.13V0zm1.25 5.22l-2.47 2.47a.75.75 0 01-.28.188V15h3a.75.75 0 010 1.5H7a.75.75 0 010-1.5h3V7.878a.75.75 0 01-.28-.188L7.25 5.22a.75.75 0 011.06-1.06L10 5.85l1.69-1.69a.75.75 0 011.06 1.06z" clipRule="evenodd" />
+                </svg>
+              </div>
+
+              {achievement.url ? (
+                <a
+                  href={achievement.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-stone-600 leading-relaxed hover:text-accent-700 transition-colors"
+                >
+                  {achievement.text}
+                </a>
+              ) : (
+                <p className="text-sm text-stone-600 leading-relaxed">{achievement.text}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

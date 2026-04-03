@@ -1,5 +1,24 @@
 export const experiences = [
   {
+    role: 'Software Engineer',
+    company: 'CampusLyan',
+    companyUrl: 'https://www.campuslyan.se/',
+    duration: 'February 2026 - Present',
+    responsibilities: [
+      'Working on the website design and layout'
+    ]
+  },
+  {
+    role: 'Volunteer',
+    company: '10billion.org',
+    companyUrl: 'https://10billion.org/', // Add the organization's website
+    duration: 'August 2024 – Present',
+    responsibilities: [
+      'Managing the frontend team and project',
+      'Writing content for the website',
+      'Working on the website design and layout']
+  },
+  {
     role: 'Senior Software Engineer',
     company: 'Hubar Tech Ltd',
     companyUrl: 'https://hubartech.com/', // Add the organization's website
@@ -23,14 +42,5 @@ export const experiences = [
       'Collaborated with backend teams to understand and implement requirements.'
     ]
   },
-  {
-    role: 'Volunteer',
-    company: '10billion.org',
-    companyUrl: 'https://10billion.org/', // Add the organization's website
-    duration: 'August 2024 – Present',
-    responsibilities: [
-      'Managing the frontend team and project',
-      'Writing content for the website',
-      'Working on the website design and layout']
-  }
+  
 ];

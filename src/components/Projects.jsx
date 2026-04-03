@@ -1,152 +1,47 @@
 import React from 'react';
-import {
-  Stack,
-  Chip,
-  Divider,
-  Grid,
-  Paper,
-  Typography,
-  useTheme,
-  Link
-} from '@mui/material';
-import { VscAzure } from 'react-icons/vsc'; // Make sure this icon is used if needed or remove if not
-import Project from '../assets/Projects.png';
 import { projects } from '../assets/Projects';
 
 const Projects = ({ id }) => {
-  const theme = useTheme();
-
   return (
-    <Grid
-      item
-      xs={12}
-      md={8}
-      id={id}
-      sx={{
-        marginTop: 12,
-        minHeight: 200,
-        height: 'auto',
-        width: '100%',
-        [theme.breakpoints.down('md')]: {
-          marginTop: 10
-        }
-      }}
-    >
-      <Paper
-        sx={{
-          backgroundColor: theme.palette.background.paper,
-          boxShadow: theme.shadows[5],
-          width: '80%',
-          margin: '0px auto',
-          [theme.breakpoints.down('md')]: {
-            width: '95%',
-            padding: 1
-          },
-          padding: 2,
-          minHeight: 200,
-          height: 'auto'
-        }}
-      >
-        <Stack
-          direction='column'
-          spacing={2}
-          sx={{
-            minHeight: 200,
-            height: 'auto'
-          }}
-        >
-          {/* Title Section - Modified to match Skills component */}
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column', // Changed to column
-              justifyContent: 'flex-start'
-            }}
-          >
-            <Typography
-              variant='h6'
-              // align='center' // Removed align as it was causing an issue with image
-              color={theme.palette.text.primary}
-              component='span' // Added component='span' for consistency with Skills
-              sx={{
-                [theme.breakpoints.down('sm')]: {
-                  fontSize: '1rem'
-                }
-              }}
-            >
-              <img
-                src={Project}
-                alt={`<a href="https://www.flaticon.com/free-icons/project" title="project icons">Project icons created by afitrose - Flaticon</a>`}
-                height={50}
-                width={50}
-                style={{
-                  verticalAlign: 'middle',
-                  paddingRight: 8 // Increased padding for consistency
-                }}
-              />
-              Projects
-            </Typography>
-            <Divider sx={{ my: 2 }} /> {/* Moved Divider outside Typography */}
-          </div>
+    <section id={id} className="py-24 px-6 bg-white">
+      <div className="max-w-3xl mx-auto">
+        <h2 className="text-2xl font-bold tracking-tight text-stone-900">Projects</h2>
+        <div className="mt-1 h-px w-12 bg-accent-400" />
 
-          {/* Projects Section */}
-          <div>
-            {projects.map((project, index) => (
-              <div key={index} style={{ marginBottom: '20px' }}>
-                <Typography
-                  gutterBottom
-                  variant='h6'
-                  color={theme.palette.text.primary}
-                >
-                  <Link
-                    href={project.link}
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    color='inherit'
-                    sx={{ textDecoration: 'none', fontWeight: 'bold' }}
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
+          {projects.map((project, index) => (
+            <a
+              key={index}
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block p-6 rounded-2xl border border-stone-150 bg-stone-50/50 hover:bg-white hover:shadow-lg hover:border-accent-200 transition-all duration-300"
+            >
+              <h3 className="text-base font-semibold text-stone-900 group-hover:text-accent-700 transition-colors">
+                {project.name}
+                <span className="inline-block ml-1.5 opacity-0 group-hover:opacity-100 transition-opacity text-accent-500">
+                  &rarr;
+                </span>
+              </h3>
+
+              <div className="mt-4 flex flex-wrap gap-1.5">
+                {project.technologies.map((tech, idx) => (
+                  <span
+                    key={idx}
+                    className="inline-flex items-center gap-1 px-2 py-1 text-xs text-stone-500 bg-stone-100 rounded-md"
                   >
-                    {project.name}
-                  </Link>
-                </Typography>
-                <Typography
-                  gutterBottom
-                  variant='body2'
-                  color={theme.palette.text.secondary}
-                  sx={{ padding: theme.spacing(1, 0) }} // Added padding for better spacing
-                >
-                  Technologies Used:
-                </Typography>
-                <Stack
-                  direction='row'
-                  spacing={1}
-                  flexWrap='wrap'
-                  useFlexGap // Ensures wrapping elements maintain spacing
-                >
-                  {project.technologies.map((tech, idx) => (
-                    <Chip
-                      key={idx}
-                      icon={tech.icon || null}
-                      label={tech.label}
-                      sx={{
-                        padding: 1,
-                        margin: 1, // Chip margins will also help with spacing
-                        backgroundColor: theme.palette.primary.dark,
-                        '& .MuiChip-icon': {
-                          color: theme.palette.secondary.main
-                        },
-                        '& .MuiChip-label': {
-                          color: theme.palette.secondary.main
-                        }
-                      }}
-                    />
-                  ))}
-                </Stack>
+                    {tech.icon && (
+                      <span className="text-stone-400 text-xs flex items-center">{tech.icon}</span>
+                    )}
+                    {tech.label}
+                  </span>
+                ))}
               </div>
-            ))}
-          </div>
-        </Stack>
-      </Paper>
-    </Grid>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
