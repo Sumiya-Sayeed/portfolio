@@ -1,5 +1,9 @@
 export const achievements = [
   {
+    text: 'Won hackathon arranged by Campus Varberg, Sweden. - 2026',
+    url: 'https://campus.varberg.se/evenemang/391-hackathon'
+  },
+  {
     text: 'Achieved Sweden Institute Scholarship for Global Professionals - 2025',
     url: 'https://si.se/en/apply/scholarships/swedish-institute-scholarships-for-global-professionals/'
   },
