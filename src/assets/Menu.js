@@ -20,6 +20,10 @@ const options = [
     path: 'Education'
   },
   {
+    menu: 'Research',
+    path: 'Research'
+  },
+  {
     menu: 'Achievements',
     path: 'Achievements'
   }

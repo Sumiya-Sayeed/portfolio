@@ -6,6 +6,7 @@ import Projects from './Projects';
 import Experience from './Experience';
 import Education from './Education';
 import Achievements from './Achivements';
+import Publications from './Publications';
 
 const ScrollToTop = () => {
   const [visible, setVisible] = useState(false);
@@ -67,11 +68,7 @@ const Layout = () => {
       <Intro id="About" />
 
       <div className="reveal-section">
-        <Skills id="Skills" />
-      </div>
-
-      <div className="reveal-section">
-        <Projects id="Projects" />
+        <Education id="Education" />
       </div>
 
       <div className="reveal-section">
@@ -79,7 +76,15 @@ const Layout = () => {
       </div>
 
       <div className="reveal-section">
-        <Education id="Education" />
+        <Publications id="Research" />
+      </div>
+
+      <div className="reveal-section">
+        <Skills id="Skills" />
+      </div>
+
+      <div className="reveal-section">
+        <Projects id="Projects" />
       </div>
 
       <div className="reveal-section">

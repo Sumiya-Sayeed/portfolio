@@ -52,19 +52,21 @@ const Intro = ({ id }) => {
         {/* Bio paragraphs — left-aligned, readable column */}
         <div className="space-y-5 text-stone-500 leading-relaxed animate-fade-in-up animate-delay-200">
           <p>
-            I am a passionate and skilled frontend developer with a deep enthusiasm for building user-friendly, high-quality web applications. Over time, my expertise has grown beyond frontend development into full-stack engineering, DevOps, and emerging areas like AI and data science, allowing me to approach problems with a more holistic and strategic mindset. With a strong foundation in responsive and pixel-perfect design, I focus on creating scalable applications that integrate modern technologies seamlessly.
-          </p>
+            I’m a software engineer, researcher, and problem solver who loves building things that actually matter. Over the past 8+ years, I’ve worked across frontend engineering, full-stack development, DevOps, AI, and data science growing from someone obsessed with pixel-perfect interfaces into someone who enjoys understanding entire systems from architecture to intelligence.          </p>
 
           <p>
-            Beyond development, I am an active competitive programmer, having solved over 800 challenges across platforms such as Codeforces, AtCoder, UVa, Toph, and HackerRank. This journey has sharpened my critical thinking and problem-solving abilities, making me more analytical, efficient, and resourceful in tackling real-world engineering challenges.
-          </p>
+            I’ve worked on production applications used by real people, collaborated with international teams, led engineering decisions, mentored developers, and contributed to projects under tight deadlines. I enjoy turning complex ideas into scalable, elegant, and user-friendly products.          </p>
 
           <p>
-            My curiosity also extends into cognitive science and psychology, which continuously shape how I think about technology and its impact on people. Influenced by works like The Brain: The Story of You by David Eagleman and Emotional Intelligence by Daniel Goleman, along with insights from experts such as Neil deGrasse Tyson and Dr. Andrew Huberman, I am particularly interested in the intersection of human behavior, neuroscience, and AI. I actively explore how these perspectives can inform better system design and more human-centered intelligent solutions.
-          </p>
+            Outside of work, I’m deeply passionate about problem solving and competitive programming, with 800+ solved challenges across platforms like Codeforces, AtCoder, UVa, Toph, and HackerRank. That experience taught me how to think critically, learn quickly, and stay calm while solving difficult problems.          </p>
 
           <p>
-            Driven by a strong desire to learn and grow, I am always pushing myself to explore new ideas, solve complex problems, and contribute to meaningful projects that connect technology with human understanding.
+            What makes me different is that my curiosity doesn’t stop at code. I’m fascinated by human behavior, psychology, neuroscience, and how people think and interact with technology. I spend a lot of time exploring ideas around cognitive science, intelligent systems, and human-centered AI, inspired by thinkers like David Eagleman, Daniel Goleman, Neil deGrasse Tyson, and Andrew Huberman.          </p>
+
+          <p>
+            Lately, my focus has expanded more into research, AI, and data-driven systems, where I enjoy combining engineering, analytics, and human understanding to solve meaningful problems. Whether it’s building applications, analyzing complex data, designing intelligent systems, or exploring new technologies, I’m always driven by curiosity and the excitement of learning something new.</p>
+          <p>
+            At the core, I’m someone who loves creating, learning, experimenting, and pushing beyond boundaries both in technology and in life.
           </p>
         </div>
       </div>

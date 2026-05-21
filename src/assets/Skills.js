@@ -18,7 +18,11 @@ import {
   SiJira,
   SiTailwindcss,
   SiBootstrap,
-  SiGraphql
+  SiGraphql,
+  SiScikitlearn,
+  SiPandas,
+  SiNumpy,
+  SiJupyter
 } from 'react-icons/si';
 import { VscAzure } from 'react-icons/vsc';
 import { GiTeamIdea } from 'react-icons/gi';
@@ -85,9 +89,23 @@ export const skills = [
     ]
   },
   {
+    label: 'Data Science & ML',
+    data: [
+      { label: 'XGBoost' },
+      { label: 'SHAP' },
+      { label: 'Scikit-learn', icon: <SiScikitlearn /> },
+      { label: 'Pandas', icon: <SiPandas /> },
+      { label: 'NumPy', icon: <SiNumpy /> },
+      { label: 'Jupyter', icon: <SiJupyter /> },
+      { label: 'Transformer Models' },
+      { label: 'Digital Twins' },
+      { label: 'Data Visualization' },
+      { label: 'Statistical Analysis' }
+    ]
+  },
+  {
     label: 'Others',
     data: [
-      { label: 'Data Visualization' },
       { label: 'Monorepo' },
       { label: 'Nx' }
     ]
