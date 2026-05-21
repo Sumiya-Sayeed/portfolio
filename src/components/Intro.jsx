@@ -1,5 +1,5 @@
 import React from 'react';
-import SumiyaSayeed from '../assets/SumiyaSayeed.jpeg';
+import SumiyaSayeed from '../assets/SumiyaSayeed.jpg';
 import logos from '../assets/ProfileLogos';
 
 const Intro = ({ id }) => {
