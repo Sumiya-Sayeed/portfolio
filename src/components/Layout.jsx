@@ -80,15 +80,15 @@ const Layout = () => {
       </div>
 
       <div className="reveal-section">
+        <Achievements id="Achievements" />
+      </div>
+
+      <div className="reveal-section">
         <Skills id="Skills" />
       </div>
 
       <div className="reveal-section">
         <Projects id="Projects" />
-      </div>
-
-      <div className="reveal-section">
-        <Achievements id="Achievements" />
       </div>
 
       {/* Footer */}

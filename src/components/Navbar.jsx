@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
-const navItems = ['About', 'Skills', 'Projects', 'Experience', 'Education', 'Achievements'];
+import navItems from '../assets/Menu';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -43,11 +42,11 @@ const Navbar = () => {
         <div className="hidden md:flex items-center gap-1">
           {navItems.map((item) => (
             <button
-              key={item}
-              onClick={() => scrollTo(item)}
+              key={item.path}
+              onClick={() => scrollTo(item.path)}
               className="px-3 py-2 text-sm text-stone-500 hover:text-accent-700 transition-colors rounded-lg hover:bg-accent-50"
             >
-              {item}
+              {item.menu}
             </button>
           ))}
         </div>
@@ -74,11 +73,11 @@ const Navbar = () => {
           <div className="px-6 py-4 flex flex-col gap-1">
             {navItems.map((item) => (
               <button
-                key={item}
-                onClick={() => scrollTo(item)}
+                key={item.path}
+                onClick={() => scrollTo(item.path)}
                 className="text-left px-3 py-2.5 text-sm text-stone-600 hover:text-accent-700 hover:bg-accent-50 rounded-lg transition-colors"
               >
-                {item}
+                {item.menu}
               </button>
             ))}
           </div>

@@ -1,7 +1,23 @@
-const options = [
+const navItems = [
   {
     menu: 'Intro',
     path: 'Intro'
+  },
+  {
+    menu: 'Education',
+    path: 'Education'
+  },
+    {
+    menu: 'Experience',
+    path: 'Experience'
+  },
+    {
+    menu: 'Research',
+    path: 'Research'
+  },
+    {
+    menu: 'Achievements',
+    path: 'Achievements'
   },
   {
     menu: 'Skills',
@@ -11,22 +27,6 @@ const options = [
     menu: 'Projects',
     path: 'Projects'
   },
-  {
-    menu: 'Experience',
-    path: 'Experience'
-  },
-  {
-    menu: 'Education',
-    path: 'Education'
-  },
-  {
-    menu: 'Research',
-    path: 'Research'
-  },
-  {
-    menu: 'Achievements',
-    path: 'Achievements'
-  }
 ];
 
-export default options;
+export default navItems;
