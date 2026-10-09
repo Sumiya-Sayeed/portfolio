@@ -19,7 +19,7 @@ const Intro = ({ id }) => {
           </h1>
 
           <p className="mt-2 text-lg text-accent-600 font-medium">
-            Software Engineer
+            Software Engineer &amp; Researcher
           </p>
 
           {/* Social links */}
