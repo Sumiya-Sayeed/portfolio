@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.ad10d6c6.css",
-    "main.js": "/static/js/main.dd95e2d3.js",
+    "main.js": "/static/js/main.ab22ad36.js",
     "static/media/SumiyaSayeed.jpg": "/static/media/SumiyaSayeed.99c17abf2faeab15c5ab.jpg",
     "index.html": "/index.html",
     "main.ad10d6c6.css.map": "/static/css/main.ad10d6c6.css.map",
-    "main.dd95e2d3.js.map": "/static/js/main.dd95e2d3.js.map"
+    "main.ab22ad36.js.map": "/static/js/main.ab22ad36.js.map"
   },
   "entrypoints": [
     "static/css/main.ad10d6c6.css",
-    "static/js/main.dd95e2d3.js"
+    "static/js/main.ab22ad36.js"
   ]
 }
