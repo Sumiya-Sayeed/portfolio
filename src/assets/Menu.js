@@ -11,9 +11,13 @@ const navItems = [
     menu: 'Experience',
     path: 'Experience'
   },
-    {
-    menu: 'Research',
-    path: 'Research'
+  {
+    menu: 'Publications',
+    path: 'Publications'
+  },
+  {
+    menu: 'Conferences',
+    path: 'Conferences'
   },
     {
     menu: 'Achievements',

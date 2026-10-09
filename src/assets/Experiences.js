@@ -1,5 +1,15 @@
 export const experiences = [
   {
+    role: 'Full-Stack Engineer & Data Analyst',
+    company: 'Aquality Halmstad',
+    companyUrl: 'https://aqualityhalmstad.se/',
+    duration: 'July 2026 - Present',
+    responsibilities: [
+      'Transforming raw data into meaningful insights through visualization and interpretation.',
+      'Designing and developing software solutions across both frontend and backend systems.'
+    ]
+  },
+  {
     role: 'Software Engineer',
     company: 'CampusLyan',
     companyUrl: 'https://www.campuslyan.se/',

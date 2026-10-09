@@ -7,6 +7,7 @@ import Experience from './Experience';
 import Education from './Education';
 import Achievements from './Achivements';
 import Publications from './Publications';
+import Conferences from './Conferences';
 
 const ScrollToTop = () => {
   const [visible, setVisible] = useState(false);
@@ -76,7 +77,11 @@ const Layout = () => {
       </div>
 
       <div className="reveal-section">
-        <Publications id="Research" />
+        <Publications id="Publications" />
+      </div>
+
+      <div className="reveal-section">
+        <Conferences id="Conferences" />
       </div>
 
       <div className="reveal-section">

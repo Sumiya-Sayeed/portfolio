@@ -39,7 +39,7 @@ const Navbar = () => {
         </button>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden lg:flex items-center gap-1">
           {navItems.map((item) => (
             <button
               key={item.path}
@@ -54,7 +54,7 @@ const Navbar = () => {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 text-stone-600 hover:text-stone-900"
+          className="lg:hidden p-2 text-stone-600 hover:text-stone-900"
           aria-label="Toggle menu"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -69,7 +69,7 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-lg border-t border-stone-100">
+        <div className="lg:hidden bg-white/95 backdrop-blur-lg border-t border-stone-100">
           <div className="px-6 py-4 flex flex-col gap-1">
             {navItems.map((item) => (
               <button
